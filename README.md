@@ -16,3 +16,6 @@ hq9+ has four functions that do everything needed for computer science.
 
 There is also an object oriented extension of hq9+ called hq9++, but that's a
 project for another day.
+
+ADDENDUM: Realized that I totally overengineered hq9plus.p6, so have
+refactored it into hq9plus-simpler.p6. Choices!
