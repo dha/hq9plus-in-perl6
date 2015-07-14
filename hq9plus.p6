@@ -1,7 +1,18 @@
 my $accumulator;
+my @instructions;
+
+die "Only one command string allowed" if @*ARGS.elems > 1;
+
+validate(@*ARGS[0]);
+
+tokenize(@*ARGS[0]);
 
 sub hello {
     say "Hello, world!"
+}
+
+sub quine {
+    say @*ARGS[0];
 }
 
 sub 99 {
@@ -22,4 +33,13 @@ sub 99 {
 
 sub plus {
     $accumulator++;
+}
+
+sub tokenize ($input) {
+    @instructions = $input.split('');
+}
+
+sub validate ($input) {
+    die q{The only valid instructions are "h", "q", "9", and "+"}
+    if $input ~~ /<-[hq9\+]>/;
 }
